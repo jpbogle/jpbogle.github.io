@@ -60,6 +60,8 @@ body {
     transition: all .1s
   }
   #resume-header {
+    display: block;
+    text-decoration: none;
     padding:5px 8px;
     position:absolute;
     right:-130px;
@@ -73,7 +75,7 @@ body {
     transition: all .1s;
     line-height: 1.8;
     font-size:14px;
-    a {
+    span {
       text-decoration: none;
       color:white;
     }
