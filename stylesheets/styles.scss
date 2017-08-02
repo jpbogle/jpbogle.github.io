@@ -187,9 +187,10 @@ body {
       -moz-box-shadow: 10px 10px 137px -23px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 137px -23px rgba(0, 0, 0, 0.75);
       transition: all .1s;
+      text-decoration: none;
+      display: block;
 
-      a {
-        text-decoration: none;
+      span {
         color: white;
       }
     }
