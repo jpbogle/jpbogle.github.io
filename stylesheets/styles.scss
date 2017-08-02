@@ -197,7 +197,7 @@ body {
 
     h2 {
       color: #030F26;
-      height: 30px;
+      min-height: 30px;
     }
   }
 
@@ -209,7 +209,7 @@ body {
     /*color: rgba(3,15,38,0.9);*/
     h2 {
       color: #030F26;
-      height: 30px;
+      min-height: 30px;
     }
   }
 }
@@ -376,7 +376,7 @@ footer {
   }
 
   #cover {
-    background: url(../../img/mobile-nantucket.png);
+    background: url(../img/mobile-acklighthouse.jpg);
     height: 972px !important;
   }
 }
