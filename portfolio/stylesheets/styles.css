@@ -1,1 +1,123 @@
-.block{max-width:100%;min-height:470px;padding:30px 30px 40px 30px}#block-2{background-color:#9575CD;color:#E5E5E5;padding-left:10%;padding-right:10%;margin-top:70px;margin-left:auto;margin-right:auto}#block-2 h1 img{margin-left:auto;margin-right:auto;text-align:center;height:150px;font-family:"Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif}#block-2 #nasdaq{padding:20px;width:200px;float:left;padding-right:30px}#block-2 .description{margin-top:25px;line-height:1.5;margin-left:auto;margin-right:auto;margin-bottom:20px}#block-2 #go{height:100px}#block-3,#block-1{background-color:#f0f4fd;padding-left:10%;padding-right:10%;margin-top:70px;margin-left:auto;margin-right:auto}#block-3 h1,#block-1 h1{text-align:center;font-family:"Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif}#block-3 #nasdaq,#block-1 #nasdaq{padding:20px;width:200px;float:left;padding-right:30px}#block-3 .description,#block-1 .description{margin-top:45px;line-height:1.5;margin-left:auto;margin-right:auto;margin-bottom:50px}#block-3 #drupal,#block-1 #drupal{width:400px;display:block;margin-left:auto;margin-right:auto;padding:6px}#block-4{color:#f0f4fd;background-color:#3983CA;padding-left:10%;padding-right:10%;margin-left:auto;margin-right:auto}#block-4 h1{text-align:center;font-family:"Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif}#block-4 img{width:200px;float:left;padding-right:30px}#block-4 .description{margin-top:45px;line-height:1.5;margin-left:auto;margin-right:auto;margin-bottom:50px}#block-4 video{width:550px;display:block;margin-left:auto;margin-right:auto;padding:6px;border:3px solid #96B8DE}#block-4 #up-link{text-decoration:none;display:block;margin:10px;background-color:#96B8DE;padding:10px 15px;border-radius:15px;font-size:15px;margin-left:auto;margin-right:auto;color:white;width:80px;text-align:center;transition:all .1s}#block-4 #up-link:hover{transform:scale(1.05);transition:all .2s}#block-5{padding-left:10%;padding-right:10%;background-color:#f0f4fd;margin-left:auto;margin-right:auto}#block-5 h1{text-align:center;font-family:"Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif}#block-5 #mit{width:200px;float:left;padding-right:30px}#block-5 .description{margin-top:45px;line-height:1.5;margin-left:auto;margin-right:auto;margin-bottom:50px}#block-5 #eds{width:400px;display:block;margin-left:auto;margin-right:auto;padding:6px;border:3px solid #96B8DE}
+.block {
+  font-family: Helvetica;
+  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: #f0f4fd;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block .container {
+  width: 90%;
+  margin: 0px auto;
+  min-height: 150px;
+}
+.block .container h1 {
+  font-size: 40px;
+  text-align: center;
+}
+.block .container h1 img {
+  height: 100px;
+}
+.block .container h1 #stationsHeader {
+  height: 140px;
+}
+.block .container #left-image {
+  max-width: 200px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  float: left;
+  padding-right: 50px;
+}
+.block .container .description {
+  padding-top: 10px;
+  min-height: 120px;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.block .centered-image {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+}
+
+#block-novartis {
+  background-color: #fff;
+}
+
+#block-stations {
+  background-color: #9575CD;
+  color: #E5E5E5;
+}
+
+#block-up {
+  color: #f0f4fd;
+  background-color: #3983CA;
+}
+#block-up video {
+  width: 550px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+  border: 3px solid #96B8DE;
+}
+#block-up #up-link {
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  background-color: #96B8DE;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  width: 80px;
+  text-align: center;
+  transition: all 0.1s;
+}
+#block-up #up-link:hover {
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+#block-5 {
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #f0f4fd;
+  margin-left: auto;
+  margin-right: auto;
+}
+#block-5 h1 {
+  text-align: center;
+}
+#block-5 #mit {
+  width: 200px;
+  float: left;
+  padding-right: 30px;
+}
+#block-5 .description {
+  margin-top: 45px;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+#block-5 #eds {
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+  border: 3px solid #96B8DE;
+}
+
+/*# sourceMappingURL=styles.css.map */

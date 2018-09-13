@@ -1,70 +1,46 @@
 .block {
+  font-family: Helvetica;
   max-width:100%;
-  min-height:470px;
-  padding:30px 30px 40px 30px;
-
-}
-
-#block-2 {
-  background-color:#9575CD;
-  color: #E5E5E5;
-  padding-left:10%;
-  padding-right:10%;
-  margin-top:70px;
-  margin-left:auto;
-  margin-right:auto;
-  h1 img {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    height: 150px;
-    font-family: "Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif;
-  }
-  #nasdaq {
-    padding:20px;
-    width:200px;
-    float:left;
-    padding-right:30px;
-  }
-  .description {
-    margin-top:25px;
-    line-height:1.5;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:20px;
-  }
-  #go {
-    height: 100px;
-  }
-}
-
-#block-3, #block-1 {
-
+  padding-top: 50px;
+  padding-bottom: 40px;
   background-color:#f0f4fd;
   padding-left:10%;
   padding-right:10%;
-  margin-top:70px;
   margin-left:auto;
   margin-right:auto;
-  h1 {
-    text-align: center;
-    font-family: "Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif;
+  .container {
+    width: 90%;
+    margin: 0px auto;
+    min-height: 150px;
 
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      img {
+        height: 100px;
+      }
+      #stationsHeader {
+        height: 140px;
+      }
+    }
+    #left-image {
+      max-width:200px;
+      max-height: 150px;
+      width: auto;
+      height: auto;
+      float:left;
+      padding-right:50px;
+    }
+    .description {
+      padding-top: 10px;
+      min-height: 120px;
+      line-height:1.5;
+      margin-left:auto;
+      margin-right:auto;
+      margin-bottom:20px;
+    }
   }
-  #nasdaq {
-    padding:20px;
-    width:200px;
-    float:left;
-    padding-right:30px;
-  }
-  .description {
-    margin-top:45px;
-    line-height:1.5;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:50px;
-  }
-  #drupal {
+  .centered-image {
     width:400px;
     display:block;
     margin-left:auto;
@@ -73,30 +49,20 @@
   }
 }
 
-#block-4 {
+#block-novartis {
+    background-color:#fff;
+}
+
+#block-stations {
+  background-color:#9575CD;
+  color: #E5E5E5;
+}
+
+
+#block-up {
   color: #f0f4fd;
   background-color: #3983CA;
-  padding-left:10%;
-  padding-right:10%;
-  margin-left:auto;
-  margin-right:auto;
-  h1 {
-    text-align: center;
-    font-family: "Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif;
 
-  }
-  img {
-    width:200px;
-    float:left;
-    padding-right:30px;
-  }
-  .description {
-    margin-top:45px;
-    line-height:1.5;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:50px;
-  }
   video {
     width:550px;
     display:block;
@@ -136,8 +102,6 @@
   margin-right:auto;
   h1 {
     text-align: center;
-    font-family: "Clear Sans", Clear Sans, Clear-Sans, "Open Sans", Helvetica, sans-serif;
-
   }
   #mit {
     width:200px;
