@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var scrollPosition = $('#bio').offset().top-150;
+    var scrollPosition = 600;
     $(window).on('scroll', function(){
 
         if($(window).scrollTop() > scrollPosition) {

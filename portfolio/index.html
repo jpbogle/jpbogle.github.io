@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/resume-slide-portfolio.js"></script>
+    <script src="../js/resume-slide.js"></script>
     <link rel="shortcut icon" href="../favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="../stylesheets/styles.css">
@@ -30,12 +30,13 @@
           </a>
 
           <ul>
-            <li><a href="#block-5"><span>Apple</span></a></li>
-            <li><a href="#block-2"><span>Stations</span></a></li>
-            <li><a href="#block-5"><span>Media Lab</span></a></li>
-            <li><a href="#block-1" class="active"><span>Novartis</span></a></li>
-            <li><a href="#block-3"><span>Nasdaq OMX</span></a></li>
-            <li><a href="#block-4"><span>Up Photography</span></a></li>
+            <li><a href="#block-apple" class="active"><span>Apple</span></a></li>
+            <li><a href="#block-novartis"><span>Novartis</span></a></li>
+            <li><a href="#block-stations"><span>Stations</span></a></li>
+            <li><a href="#block-nasdaq"><span>Nasdaq</span></a></li>
+            <li><a href="#block-up"><span>Up Photography</span></a></li>
+            <li><a href="#block-medialab"><span>Media Lab</span></a></li>
+
           </ul>
 
           <span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -46,7 +47,7 @@
       <span>View Resume</span>
     </a>
   </header>
-  <div style="margin-top: 80px" class="block" id="block-1">
+  <div style="margin-top: 80px" class="block" id="block-apple">
     <div class="container">
       <h1><img id="appleHeader" src=../img/appletext.png></h1>
       <div class="description"><p>After graduation, I worked the summer at Apple on the core services team for Apple media products. I designed and implemented a data API with REST endpoints and query language abilities similar to graphQL. I developed an internal tool for building URLs and ran performance and load tests using Jmeter. All of this code was deployed live to be adopted by iOS, desktop and internal web applications used by millions of users.
@@ -70,7 +71,7 @@
       </p></div>
     </div>
   </div>
-  <div class="block" id="block-3">
+  <div class="block" id="block-nasdaq">
     <div class="container">
       <h1><img src="../img/nasdaq.png"></h1>
       <div class="description"><p>At Nasdaq, I worked as an intern for the Summer of 2016, developing and designing a new web development platform and potential product for the Global Corporate Solutions business in the web hosting space using the drupal CMS. I presented a go to market strategy for the product to numerous business leaders in the company. In addition, I experimented in an agile environment with natural language processing to augment current products.
@@ -90,7 +91,7 @@
     </video>
     <a id="up-link" href="http://upphoto.us">Learn More</a>
   </div>
-  <div class="block">
+  <div class="block" id="block-medialab">
     <div class="container">
       <h1>Media Lab</h1>
       <img id="left-image" src="../img/medialab.png">
