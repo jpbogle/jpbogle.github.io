@@ -40,10 +40,10 @@ body {
 
 .page-outer {
   width: 100%;
-  height: 200%;
+  height: 100%;
 }
 
-.wrapper-div {
+.page-inner {
   padding-top: 70px;
 }
 
@@ -60,7 +60,6 @@ svg {
   font-size: 20px;
   text-align: center;
 }
-
 
 .list {
   list-style: none;
@@ -187,9 +186,14 @@ svg {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .wrapper-div {
+  .page-inner {
     width: 80%;
     margin: 0px auto;
+    padding-top: 0px;
+  }
+
+  #home {
+    padding-top: 70px;
   }
 }
 
@@ -208,10 +212,10 @@ svg {
     </nav>
     <svg id="svg-outer" viewbox="0,0,800,800">
       <g id="view-box" width="100%">
-        <foreignObject id="home-outer" class="page-outer" x="0" y="0">
-          <div class="wrapper-div" id="home" xmlns="http://www.w3.org/1999/xhtml">
+        <foreignObject id="home-outer" class="page-outer" x="0" y="0" width="100%" height="200%">
+          <div class="page-inner" id="home" xmlns="http://www.w3.org/1999/xhtml">
             <div id="card">
-              <img id="headshot" src="img/bogle.png"/>
+              <img id="headshot" src="img/manursing2.png"/>
               <div id="info">
                 <div class="item">Jeremy Bogle | <a href="mailto:jeremy@bogle.cc">jeremy@bogle.cc</a></div>
                 <div class="item">Software Engineer at Apple</div>
@@ -222,8 +226,8 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="research-outer" class="page-outer" x="-1200" y="-6000">
-          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+        <foreignObject id="research-outer" class="page-outer" x="-1200" y="-700" width="100%" height="200%">
+          <div class="page-inner" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Research</div>
             </div>
@@ -287,8 +291,8 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="interests-outer" class="page-outer" x="1200" y="-600">
-          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+        <foreignObject id="interests-outer" class="page-outer" x="1200" y="-700" width="100%" height="200%">
+          <div class="page-inner" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Interests</div>
             </div>
@@ -341,8 +345,8 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="projects-outer" class="page-outer" x="1200" y="600">
-          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+        <foreignObject id="projects-outer" class="page-outer" x="1200" y="700" width="100%" height="200%">
+          <div class="page-inner" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Projects</div>
             </div>
@@ -396,7 +400,7 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject class="wrapper-div" class="page-outer" id="resume-outer" x="-1200" y="600" width="100%" height="150%">
+        <foreignObject class="page-outer" id="resume-outer" x="-1200" y="700" width="100%" height="200%">
           <div xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Resume</div>
@@ -421,22 +425,22 @@ const pages = [
       id: "research",
       title: "Research",
       x: -1200,
-      y: -600,
+      y: -700,
     } , {
       id: "interests",
       title: "Interests",
       x: 1200,
-      y: -600,
+      y: -700,
     }, {
       id: "projects",
       title: "Projects",
       x: 1200,
-      y: 600,
+      y: 700,
     }, {
       id: "resume",
       title: "Resume",
       x: -1200,
-      y: 600,
+      y: 700,
     }
   ];
 
@@ -487,16 +491,17 @@ var active = d3.select(hash).classed("active", true);
 function initLinks() {
   const menu = d3.select("#menu");
   pages.forEach((link, i) => {      
-      d3.select(`#${link.id}-outer`)
-        .attr("x", link.x)
-        .attr("y", link.y)
-      menu.append("a")
-          .attr("href", `#${link.id}`)
-        .append("li")
-          .attr("bounds", `${link.x},${link.y + parseFloat(svg.style('height').slice(0, -2))},${link.x + parseFloat(svg.style('width').slice(0, -2))},${link.y}`)
-          .attr("id", link.id)
-          .html(link.title)
-          .on("click", clicked);
+    let y = window.matchMedia('only screen and (min-device-width : 320px) and (max-device-width : 480px)').matches && link.id != 'home' ? link.y - 100 : link.y;
+    d3.select(`#${link.id}-outer`)
+      .attr("x", link.x)
+      .attr("y", y)
+    menu.append("a")
+        .attr("href", `#${link.id}`)
+      .append("li")
+        .attr("bounds", `${link.x},${link.y + parseFloat(svg.style('height').slice(0, -2))},${link.x + parseFloat(svg.style('width').slice(0, -2))},${link.y}`)
+        .attr("id", link.id)
+        .html(link.title)
+        .on("click", clicked);
   });
   menu.append("input")
     .attr("type", "checkbox")
