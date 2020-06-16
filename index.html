@@ -1,165 +1,553 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
 <head>
-    <meta charset="UTF-8">
-    <title>Jeremy | Home</title>
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/resume-slide.js"></script>
-    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
-    <link rel="stylesheet" href="./stylesheets/styles.css">
-    <link rel="stylesheet" href="./stylesheets/menu.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap" rel="stylesheet">
+  <link href="css/menu.css" rel="stylesheet">
+  <link href="css/toggle.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d74ce70443.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+
+/* ------------------ Common ------------------ */
+
+#svg-outer {
+  cursor: grab;
+}
+
+.dark-mode {
+  color: white;
+  background: #222;
+}
+
+.dark-mode a {
+  color: #62badd;
+}
+
+.dark-mode #menuToggle a {
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.background {
+  fill: none;
+  pointer-events: all; 
+}
+
+svg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.list .list-item {
+  margin-bottom: 10px;
+}
+
+.list .list-item .notes {
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.list .list-item .heading .logo {
+  height: 100%;
+}
+
+.list .list-item .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 40px;
+}
+
+.list .list-item .label {
+  font-size: 20px;
+}
+
+.list .list-item div p {
+  margin-block-start: .6em;
+  margin-block-end: .6em;
+}
+
+/* ------------------ Nav ------------------ */
+
+#arrow {
+  display: inline;
+}
+
+#nav {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+#nav .link {
+  z-index: 100;
+  margin-top:15px;
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: .1s all;
+  font-size: 16px;
+}
+
+#nav .link:hover {
+  /* border-bottom: 1px solid gray; */
+  letter-spacing: 1.1px;
+}
+
+/* ------------------ Home ------------------ */
+
+#home #card {
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+}
+
+#home #card #headshot {
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  height: 200px;
+  margin-right: 30px;
+}
+
+#home #card #info {
+  width: calc(100% - 230px);
+}
+
+#home #card #info div {
+  margin: 15px 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ------------------ Resume ------------------ */
+
+#resume-outer #resume {
+  margin: 10px auto;
+  display: block;
+  background: white;
+  padding: 20px;
+}
+
+#resume-outer .title {
+  margin-top: 20px;
+}
+
+/* ------------------ Overrides ------------------ */
+
+#teavar-logo {
+  font-size: 20px
+}
+
+#teavar-logo #highlight1 {
+  background-color: rgba(220,220,220,0.8);
+  color: rgba(40,40,40,1);
+  padding: 0px 3px;
+}
+
+#teavar-logo #highlight2 {
+  background-color: rgba(40,40,40,0.8);
+  padding: 0px 3px;
+  color: rgba(220,220,220,1);
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .wrapper-div {
+    width: 80%;
+    margin: 0px auto;
+  }
+}
+
+</style>
 <body>
-    <div id="cover">
-      <div id="intro">
-        <h1 id="name">Jeremy Bogle</h1>
-        <div id="sub-name">Massachusetts Institute of Technology</div>
+    <!-- <div id="nav" xmlns="http://www.w3.org/1999/xhtml"></div> -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input id="hamburger" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+        </ul>
       </div>
-    </div>
-    <header id="header">
-      <a href="#"><img src="img/jb.png" id="jb"></a>
-      <ul id="sections-list">
-        <li class="link"><a href="./">Home</a></li>
-        <li class="link"><a href="./portfolio">Portfolio</a></li>
-        <li class="link"><a href="./about">My Story</a></li>
-      </ul>
-      <ul id="links-list">
-        <li class="icon"><a href="https://www.facebook.com/jeremy.bogle.7"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-        <li class="icon"><a href="https://www.linkedin.com/in/jeremy-bogle-b0245910b?trk=hp-identity-name"><i class="fa fa-linkedin-square" aria-hidden="true"></a></i></li>
-        <li>
-          <nav class="cd-stretchy-nav">
-            <a class="cd-nav-trigger" href="#0">
-              Menu
-              <span aria-hidden="true"></span>
-            </a>
-
-            <ul>
-              <li><a href="#cover" class="active"><span>Home</span></a></li>
-              <li><a href="#bio"><span>Summary</span></a></li>
-              <li><a href="#skills"><span>Skills</span></a></li>
-            </ul>
-
-            <span aria-hidden="true" class="stretchy-nav-bg"></span>
-          </nav>
-        </li>
-      </ul>
-      <a href="./resume" id="resume-header">
-        <span>View Resume</span>
-      </a>
-    </header>
-
-
-    <div id=section-1>
-      <div class="col" id="bio">
-        <h2> Summary </h2>
-        <div>My name is Jeremy Bogle, and I am completing my masters in Computer Science with a concentration in computer systems at MIT. As an undergrad I majored in Computer Science and Electrical Engineering with a minor in Economics. I am passionate about technology, innovation, and creativity with a focus in computer systems, software engineering, and tech entrepreneurship. I am a fast learner with a wide range of experience in various settings and projects. I started a company with my classmate in highschool that we ran together throughout my time at MIT. I worked at Apple on the core services team, creating APIs and infrastructure for data processing for high traffic applications. I also have explored technology for finace, at Nasdaq, and artificial intelligence for science at Novartis. These experiences have prepared me with the work ethic and skillset to excel in any work environment.</div>
-      </div>
-      <div class="col"><img id="headshot" src="img/bogle.png"></div>
-      <div class="col" id="info">
-        <h2> Personal Information </h2>
-        <div class="information">Name: Jeremy Bogle</div>
-        <div class="information">Hometown: Weston, MA</div>
-        <div class="information">Age: 21</div>
-        <div class="information">Phone: (781) 835-9305</div>
-        <div class="information">E-mail: jbogle@mit.edu</div>
-        <a id="resume" href="resume"><span>View Resume</span></a>
-      </div>
-      <div id=skills>
-        <div class="grid">
-          <div class="col-1-4">
-              <div class="title">Clojure</div>
-              <img src="img/clojure.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">Go</div>
-              <img src="img/golang.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">Java</div>
-              <img src="img/java.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">React</div>
-              <img src="img/react.png">
-          </div>
-           <div class="col-1-4">
-              <div class="title">Redux</div>
-              <img src="img/redux.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">MySql</div>
-            <img src="img/mysql.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">Git</div>
-            <img src="img/git.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">Bash Terminal</div>
-            <img src="img/bash.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">Python</div>
-            <img src="img/python.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">HTML</div>
-            <img src="img/html.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">SASS</div>
-            <img src="img/sass.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">Javscript</div>
-            <img src="img/es6.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">PHP</div>
-            <img src="img/php.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">Adobe Photoshop</div>
-              <img src="img/ps.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">Adobe After Effects</div>
-              <img src="img/ae.png">
-          </div>
-          <div class="col-1-4">
-              <div class="title">Adobe Illustrator</div>
-              <img src="img/illustrator.png">
-          </div>
-          <div class="col-1-4">
-            <div class="title">Final Cut Pro</div>
-            <img src="img/fcp.png">
-          </div>
-      </div>
-      <footer>
-          <div class="col-1-3" id="footer-links">
-
-            <div id="quick-links">Quick Links</div>
-            <a href="./" class="footer-link">Home</a>
-            <a href="../portfolio.html" class="footer-link">Portfolio</a>
-            <a href="../about.html" class="footer-link">My Story</a>
-            <a href="../resume" class="footer-link">View Resume</a>
-          </div>
-          <div class="col-1-3" id="footer-info">
-            <div id="footer-name">Jeremy Bogle</div>
-            <div class="info">526 Beacon Street</div>
-            <div class="info">jbogle@mit.edu</div>
-            <div class="info socmed">
-              <a href="https://www.facebook.com/jeremy.bogle.7"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a href="https://www.linkedin.com/in/jeremy-bogle-b0245910b?trk=hp-identity-name"><i class="fa fa-linkedin-square" aria-hidden="true"></a></i>
+    </nav>
+    <svg id="svg-outer" viewbox="0,0,800,800">
+      <g id="view-box" width="100%">
+        <foreignObject id="home-outer" x="0" y="0" width="100%" height="100%">
+          <div class="wrapper-div" id="home" xmlns="http://www.w3.org/1999/xhtml">
+            <div id="card">
+              <img id="headshot" src="img/bogle.png"/>
+              <div id="info">
+                <div class="item">Jeremy Bogle | <a href="mailto:jeremy@bogle.cc">jeremy@bogle.cc</a></div>
+                <div class="item">Software Engineer at Apple</div>
+                <div class="item">Master of Computer Systems (MIT)</div>
+                <div class="item">San Francisco, CA</div>
+                <!-- <div class="item">jeremy@bogle.cc</div> -->
+              </div>
             </div>
           </div>
-          <div class="col-1-3" id="footer-personal">
-            <div id="MIT">Massachusetts Institute<div>of Technology</div></div>
-            <div class="footer-link">Computer Science and Electrical Engineering</div>
-            <div class="footer-link">Minor in Economics</div>
-            <div class="footer-link">Theta Tau Technology Chair</div>
+        </foreignObject>
+        <foreignObject id="research-outer" x="-1200" y="-6000" width="100%" height="100%">
+          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="title">
+              <div>Research</div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="heading">
+                  <div id="teavar-logo"><span id="highlight1">TEA</span><span id="highlight2">VAR</span></div>
+                </div>
+                <div class="notes">
+                  <p>First author on <a href="http://teavar.csail.mit.edu">paper</a> at SIGCOMM 2019</p>
+                  <p>Modeled traffic routing in a software-defined network as a linar optimization that optimized for potential network failures similar to CVaR in portfolio optimization</p>
+                  <p>Implemented with Gurobi linear optimizer in the Julia programming language</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" style="margin-left: -8px" src="img/microsoft.png"/>
+                </div>
+                <div class="notes">
+                  <p>Worked as a contractor with Microsoft researchers in their cloud operations group</p>
+                  <p>Collaborated on TEAVAR paper and backed the analysis with real Microsoft network data</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" src="img/csail.png"/>
+                </div>
+                <div class="notes">
+                  <p>Worked as a masters student in the CSAIL Networks lab with Professor Manya Ghobadi while pursuing my degree in computer systems</p>
+                  <p><a href="docs/thesis.pdf">Thesis</a> project was related to routing traffic in a software-defined network</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <a href="docs/sqo.pdf">Serverless Query Optimizer</a>
+                </div>
+                <div class="notes">
+                  <p>Abstracted a database query optimizer as a lambda function</p>
+                  <p>Explored parallelizing the query plan search to more efficiently cover the search space and efficiently determine an optimal query plan</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <a href="docs/flexnet.pdf">FLEXNET</a>
+                </div>
+                <div class="notes">
+                  <p>Flexibile, reconfigurable software-defined network modeled as a linear optimization</p>
+                  <p>Given instant network reconfiguration on traffic shifts, optimizes routing to minimize loss and congestion</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" src="img/media-lab.png"/>
+                </div>
+                <div class="notes">
+                  <p>Undergraduate researcher on PEV self driving car project</p>
+                  <p>Built a job scheduling simulation server in python using real taxi, hubway, and subway data in Boston</p>
+                  <p>Integrated the simulation with open street map for <a href="https://www.media.mit.edu/projects/fleet-simulation/overview/">visualizations</a></p>
+                </div>
+              </div>
+            </div>
           </div>
-      </footer>
+        </foreignObject>
+        <foreignObject id="interests-outer" x="1200" y="-600" width="100%" height="100%">
+          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="title">
+              <div>Interests</div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-network-wired" style="margin-right: 10px"></i>Networks</div>
+                </div>
+                <div class="notes">
+                  <p>Experience researching in the field of computer networks with software-defined network routing optimization</p>
+                  <p>Interested in real-time distributed streaming technologies and service mesh frameworks that handle microservice communication</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-shield-alt" style="margin-right: 10px"></i>Security</div>
+                </div>
+                <div class="notes">
+                  <p>Experience with Oauth2.0 and JWT authentication and API gateway services</p>
+                  <p>Interested in how cryptography can change best security practices in large server ecosystems</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-database" style="margin-right: 10px"></i>Databases</div>
+                </div>
+                <div class="notes">
+                  <p>Experience with many databases and queuing systems, exploring distributed database architechures</p>
+                  <p>Interested in distributed database consistency problems including data replication and in memory database operations</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-box-open" style="margin-right: 10px"></i>Infrastructure</div>
+                </div>
+                <div class="notes">
+                  <p>Experience with containers and kubernetes deployments, exploring service versioning and api diff generation for catching regressions</p>
+                  <p>Interested in service containerization, container orchestration, logging frameworks and CI/CD pipelines with automated testing</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-code" style="margin-right: 10px"></i>Web</div>
+                </div>
+                <div class="notes">
+                  <p>Experience with the latest web frameworks and interested in the future of web technologies as we continue to build high powered client frameworks</p>
+                  <p>Interested in web assembly, and other methods of client side computing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject id="projects-outer" x="1200" y="600" width="100%" height="100%">
+          <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="title">
+              <div>Projects</div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="heading">
+                  <div> <i class="fas fa-key" style="margin-right: 10px"></i>Pods</div>
+                </div>
+                <div class="notes">
+                  <p>An Oauth2.0 and OpenID Connect provider implemented as a set of microservices that together act to authenticate and authorize database reads and writess</p>
+                  <p>Flexible translation layer that exposes database queries as an HTTP api that takes a POST request with an access token and query to execute</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" src="img/stations.svg" />
+                </div>
+                <div class="notes">
+                  <p>Web application with a react/redux frontend and Go backend that used Apple Music, Spotify and Soundcloud APIs to create shared playlists</p>
+                  <p>Serverside queues and websockets allow for clients to listen simultaneously and sync up playback, up-vote, down-vote and add new songs on the queue and receive real-time notifications</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" style="height: 90%" src="img/novartis.png" />
+                </div>
+                <div class="notes">
+                  <p>Created an image recognition application that can allow scientist and engineers to rapidly draw scalable models and diagrams</p>
+                  <p>Trained a machine learning algorithm to identify shapes drawn by users and allow them to be placed into a diagram</p>
+                  <p>Developed a react / redux based interface that allows uses to train the algorithm to convert their hand drawn images to SVGs</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" src="img/nasdaq.png" />
+                </div>
+                <div class="notes">
+                  <p>Developed an automated PDF parser and WYSIWYG website builder tool and presented a go-to-market strategy for the product to numerous business leaders</p>
+                  <p>Experimented in an agile environment on Amazon's Alexa platform to bring natural language processing to existing products</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="heading">
+                  <img class="logo" id="up-logo" style="height: 90%" src="img/uplogo-black.png"/>
+                </div>
+                <div class="notes">
+                  <p>Started a company in high school to fly drones and take photos of houses for real estate companies</p>
+                  <p>Developed video editing, photo editing,graphic design, and communication skills</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </foreignObject>
+        <foreignObject class="wrapper-div" id="resume-outer" x="-1200" y="600" width="100%" height="150%">
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <div class="title">
+              <div>Resume</div>
+            </div>
+          </div>
+          <img id="resume" src="./resume.svg" width="80%"/>
+        </foreignObject>
+      </g>
+    </svg>
 </body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+const pages = [
+    {
+      id: "home",
+      title: "Home",
+      x: 0,
+      y: 0,
+    }, {
+      id: "research",
+      title: "Research",
+      x: -1200,
+      y: -600,
+    } , {
+      id: "interests",
+      title: "Interests",
+      x: 1200,
+      y: -600,
+    }, {
+      id: "projects",
+      title: "Projects",
+      x: 1200,
+      y: 600,
+    }, {
+      id: "resume",
+      title: "Resume",
+      x: -1200,
+      y: 600,
+    }
+  ];
+
+let grabbingDisabled = false;
+const zoom = d3.zoom()
+  .on("start", () => {
+    if (!grabbingDisabled) {
+      d3.select('#svg-outer').attr("style", "cursor: grabbing")
+    }
+  })
+  .on("end", () => {
+    d3.select('#svg-outer').attr("style", "");
+    grabbingDisabled = false;
+  })
+  .on("zoom", () => {
+    let transform = d3.event.transform; 
+    let g = d3.select("#view-box");
+    g.attr("transform", transform);
+  });
+
+const birdsEyeTransform = d3.zoomIdentity
+    .translate(300,250)
+    .scale(.3);
+
+const centerTransform = d3.zoomIdentity
+    .translate(0,0)
+    .scale(1);
+
+const svg = d3.select("#svg-outer")
+              .on("click", stopped);
+
+var initialTransform = centerTransform;
+var hash = "#home"
+
+initLinks();
+
+if (window.location.hash) {
+  hash = window.location.hash;
+  let bounds = d3.select(hash).attr("bounds").split(",").map(parseFloat);
+  initialTransform = getTransformFromBounds(bounds);
+}
+
+svg.call(zoom) // delete this line to disable free zooming
+   .call(zoom.transform, initialTransform);
+
+var active = d3.select(hash).classed("active", true);
+
+function initLinks() {
+  const menu = d3.select("#menu");
+  pages.forEach((link, i) => {      
+      d3.select(`#${link.id}-outer`)
+        .attr("x", link.x)
+        .attr("y", link.y)
+      menu.append("a")
+          .attr("href", `#${link.id}`)
+        .append("li")
+          .attr("bounds", `${link.x},${link.y + parseFloat(svg.style('height').slice(0, -2))},${link.x + parseFloat(svg.style('width').slice(0, -2))},${link.y}`)
+          .attr("id", link.id)
+          .html(link.title)
+          .on("click", clicked);
+  });
+  menu.append("input")
+    .attr("type", "checkbox")
+    .attr("id", "switch")
+    .on("click", toggleDarkMode)
+  menu.append("label")
+    .attr("for", "switch")
+}
+
+function getTransformFromBounds(bounds) {
+  const dx = bounds[2] - bounds[0];
+  const dy = bounds[1] - bounds[3];
+  const x = (bounds[0] + bounds[2]) / 2;
+  const y = (bounds[3] + bounds[1]) / 2;
+  const width = svg.style('width').slice(0, -2);
+  const height = svg.style('height').slice(0, -2);
+  const scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height)));
+  const translate = [width / 2 - scale * x, height / 2 - scale * y];
+  const transform = d3.zoomIdentity
+    .translate(translate[0], translate[1])
+    .scale(scale);
+  return transform;
+}
+
+function clicked(d) {
+  if (active.node() === this) return reset();
+  // d3.selectAll("#arrow").remove();
+  active.classed("active", false);
+  active = d3.select(this).classed("active", true);
+  // active.append("div").attr("id", "arrow").html("&#9758; ").lower();
+  let bounds = d3.select(this).attr("bounds").split(",").map(parseFloat);
+  svg.transition()
+      .duration(1500)
+      .call(zoom.transform, getTransformFromBounds(bounds));
+
+  grabbingDisabled = true;
+  document.getElementById("hamburger").click();
+}
+
+function reset() {
+  d3.selectAll("#arrow").remove();
+  active.classed("active", false);
+  active = d3.select(null);
+  svg.transition()
+      .duration(750)
+      .call(zoom.transform, birdsEyeTransform);
+}
+
+// If the drag behavior prevents the default click,
+// also stop propagation so we don’t click-to-zoom.
+function stopped() {
+  if (d3.event.defaultPrevented) d3.event.stopPropagation();
+}
+
+function toggleDarkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+   d3.select("#up-logo").attr("src", "img/upphoto.png");
+   d3.select("#up-logo").attr("style", "height:80%; margin-left: 5px");
+}
+
+</script>
