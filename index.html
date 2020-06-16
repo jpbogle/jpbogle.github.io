@@ -38,6 +38,11 @@ body {
   pointer-events: all; 
 }
 
+.page-outer {
+  width: 100%;
+  height: 200%;
+}
+
 .wrapper-div {
   padding-top: 70px;
 }
@@ -203,7 +208,7 @@ svg {
     </nav>
     <svg id="svg-outer" viewbox="0,0,800,800">
       <g id="view-box" width="100%">
-        <foreignObject id="home-outer" x="0" y="0" width="100%" height="100%">
+        <foreignObject id="home-outer" class="page-outer" x="0" y="0">
           <div class="wrapper-div" id="home" xmlns="http://www.w3.org/1999/xhtml">
             <div id="card">
               <img id="headshot" src="img/bogle.png"/>
@@ -217,7 +222,7 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="research-outer" x="-1200" y="-6000" width="100%" height="100%">
+        <foreignObject id="research-outer" class="page-outer" x="-1200" y="-6000">
           <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Research</div>
@@ -282,7 +287,7 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="interests-outer" x="1200" y="-600" width="100%" height="100%">
+        <foreignObject id="interests-outer" class="page-outer" x="1200" y="-600">
           <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Interests</div>
@@ -336,7 +341,7 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject id="projects-outer" x="1200" y="600" width="100%" height="100%">
+        <foreignObject id="projects-outer" class="page-outer" x="1200" y="600">
           <div class="wrapper-div" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Projects</div>
@@ -391,13 +396,13 @@ svg {
             </div>
           </div>
         </foreignObject>
-        <foreignObject class="wrapper-div" id="resume-outer" x="-1200" y="600" width="100%" height="150%">
+        <foreignObject class="wrapper-div" class="page-outer" id="resume-outer" x="-1200" y="600" width="100%" height="150%">
           <div xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
               <div>Resume</div>
             </div>
           </div>
-          <img id="resume" src="./resume.svg" width="80%"/>
+          <img id="resume" src="docs/resume.svg" width="80%"/>
         </foreignObject>
       </g>
     </svg>
