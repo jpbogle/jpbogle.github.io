@@ -67,7 +67,7 @@
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: #ddd;
   border-radius: 3px;
   
   z-index: 1;
@@ -138,6 +138,14 @@
   transform: translate(-100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Safari */
+  -khtml-user-select: none;    /* Konqueror HTML */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently supported by Chrome and Opera */
+
 }
 
 #menu li
