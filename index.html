@@ -45,7 +45,7 @@ body {
 }
 
 .page-inner {
-  padding-top: 70px;
+  padding-top: 40px;
 }
 
 svg {
@@ -57,7 +57,6 @@ svg {
 }
 
 .title {
-  margin-bottom: 20px;
   font-size: 20px;
   text-align: center;
 }
@@ -137,13 +136,14 @@ svg {
 #home #card {
   display: flex;
   width: 80%;
+  justify-items: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25%;
 }
 
 #home #card #headshot {
-  border: 5px solid #ccc;
   border-radius: 50%;
   height: 200px;
   margin-right: 30px;
@@ -151,12 +151,9 @@ svg {
 
 #home #card #info {
   width: calc(100% - 230px);
-}
-
-#home #card #info div {
-  margin: 15px 10px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* ------------------ Resume ------------------ */
@@ -260,8 +257,11 @@ svg {
               <img id="headshot" src="img/manursing2.png"/>
               <div id="info">
                 <div class="item">Jeremy Bogle | <a href="mailto:jeremy@bogle.cc">jeremy@bogle.cc</a></div>
+                <div style="height:1px;background:#ddd"></div>
                 <div class="item">Software Engineer</div>
+                <div style="height:1px;background:#ddd"></div>
                 <div class="item">Master of Computer Systems (MIT)</div>
+                <div style="height:1px;background:#ddd"></div>
                 <div class="item">New York, NY</div>
               </div>
             </div>
@@ -401,7 +401,24 @@ svg {
         <foreignObject id="projects-outer" class="page-outer" x="1200" y="700" width="100%" height="200%">
           <div class="page-inner" xmlns="http://www.w3.org/1999/xhtml">
             <div class="title">
-              <div>Projects</div>
+              Features
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="heading">
+                  <div> Apple</div>
+                </div>
+                <div class="notes">
+                  <p>Various cross-functional social music projects exposed via core query API including social search, friends, friends are listening, social graph, and shared listening via facetime and shareplay</p>
+                  <p>Music ML based audio features loudness, energy, acoustiness etc. BPM and key detection was a project that enabled more features like client smooth song transitions, partner integrations with Porsche, as well as the Photos memories project listed below</p>
+                  <p>3rd pary and partner API JWT authentication, global and dynamic rate limiting used for all media integrations including App store, Music, Podcasts, TV+ on platforms like Samsung, LG TV, Porsche, Tesla and the <a href="https://developer.apple.com/documentation/applemusicapi/">third party API</a></p>
+                  <p>I was the DRI (directly responsible invidual) for the photos memories music recognition cross-functional product - received a <b>patent</b> for the work use music ML data to inform transitions and match audio and photo filters locally on-device to a collection of photos</p>
+                  <p>Podcasts data query API for serving first party apps on all platforms and partner integrations</p>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:30px" class="title">
+              Personal Projects
             </div>
             <div class="list">
               <div class="list-item">
@@ -409,8 +426,10 @@ svg {
                   <div><i class="fas fa-key" style="margin-right: 10px"></i>Pods</div>
                 </div>
                 <div class="notes">
-                  <p>An Oauth2.0 and OpenID Connect provider implemented as a set of microservices that together act to authenticate and authorize database reads and writess</p>
-                  <p>Flexible translation layer that exposes database queries as an HTTP api that takes a POST request with an access token and query to execute</p>
+                  <p>Personal data store with data access API for giving generic applications limited access to personal data</p>
+                  <p>Implemented Oauth2.0 + OpenID Connect as a set of microservices that together authenticate and authorize database reads and writes</p>
+                  <p>Flexible translation layer that exposes database queries as an HTTP api that takes a POST request with an access token and raw DB query to execute with permissions</p>
+                  <p>Deployed on a raspberry pi to serve as an home-owned password manager that connected via home wifi and an application can request read access to sync state or retrieve individual passwords</p>
                 </div>
               </div>
               <div class="list-item">
@@ -418,26 +437,10 @@ svg {
                   <img class="logo" src="img/stations.svg" />
                 </div>
                 <div class="notes">
-                  <p>Web application with a react/redux frontend and Go backend that used Apple Music, Spotify and Soundcloud APIs to create shared playlists</p>
+                  <p>Web application with that used Apple Music, Spotify and Soundcloud APIs to create shared playlists and playlists including songs from multiple providers</p>
+                  <p>React/Redux based front-end, Golang backend, and mySql database deployed entirely on AWS EC2</p>
                   <p>Serverside queues and websockets allow for clients to listen simultaneously and sync up playback, up-vote, down-vote and add new songs on the queue and receive real-time notifications</p>
-                </div>
-              </div>
-              <div class="list-item">
-                <div class="heading">
-                  <img class="logo" style="height: 90%" src="img/novartis.png" />
-                </div>
-                <div class="notes">
-                  <p>Created an image recognition application that can allow scientist and engineers to rapidly draw scalable models and diagrams</p>
-                  <p>Trained a machine learning algorithm to identify shapes drawn by users and allow them to be placed into a diagram</p>
-                  <p>Developed a react / redux based interface that allows uses to train the algorithm to convert their hand drawn images to SVGs</p>
-                </div>
-              </div>
-              <div class="list-item">
-                <div class="heading">
-                  <img class="logo" src="img/nasdaq.png" />
-                </div>
-                <div class="notes">
-                  <p>Developed an automated PDF parser to parse proxy and 10K statements into interactive websites. Presented a go-to-market strategy for the product to numerous business leaders</p>
+                  <p>Won 2nd place in the MIT web design competition</p>
                 </div>
               </div>
               <div class="list-item">
@@ -445,7 +448,7 @@ svg {
                   <img class="logo" id="up-logo" style="height: 90%" src="img/uplogo-black.png"/>
                 </div>
                 <div class="notes">
-                  <p>Started a company in high school to fly drones and take photos of houses for real estate companies</p>
+                  <p>Started an LLC in high school to fly drones and take photos of houses for real estate companies</p>
                   <p>Developed video editing, photo editing, graphic design, and communication skills</p>
                 </div>
               </div>
@@ -489,7 +492,7 @@ svg {
               <div style="font-size:15px">Jeremy Bogle</div>
               <div style="text-align:right">
                 <a href="mailto:jeremy@bogle.cc">jeremy@bogle.cc</a>
-                <div>781-835-9305</div>
+                <div href="tel:+1-781-835-9305">781-835-9305</div>
               </div>
             </div>
             <div class="r-section">
@@ -648,22 +651,26 @@ const pages = [
       title: "Home",
       x: 0,
       y: 0,
-    }, {
+    },
+    {
       id: "research",
       title: "Research",
       x: -1200,
       y: -700,
-    } , {
+    },
+    {
       id: "interests",
       title: "Interests",
       x: 1200,
       y: -700,
-    }, {
+    },
+    {
       id: "projects",
       title: "Projects",
       x: 1200,
       y: 700,
-    }, {
+    },
+    {
       id: "resume",
       title: "Resume",
       x: -1200,
