@@ -455,6 +455,84 @@ svg {
             </div>
           </div>
         </foreignObject>
+        <foreignObject class="page-outer" id="skills-outer" x="0" y="900" width="100%" height="200%">
+          <div class="page-inner skills" style="margin-top:10px" xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+              .header {
+                margin-bottom: 10px;
+              }
+              .description {
+                color: #4a4a4a;
+                font-size: 12px;
+              }
+              .table {
+                margin-top: 20px;
+                font-size: 12px;
+              }
+              .table .row-header {
+                border-bottom: 1px solid #ddd;
+                font-weight: 600;
+              }
+              .table .row {
+                padding: 10px 5px;
+                width: 100%;
+                display: flex;
+              }
+              .table .row .first{
+                flex-grow: 1;
+                width: 25%;
+              }
+              .table .row .second {
+                flex-grow: 3;
+                width: 75%;
+              }
+            </style>
+            <div class="header">Programming Languages</div>
+            <div class="description">I've worked with a variety of systems and programming languages and am aware of many trade-offs that exists. Here are some tidbits about when I've when I have worked in each of these languages.</div>
+            <div class="table">
+              <div class="row row-header">
+                <div class="first">Name</div>
+                <div class="second">Description</div>
+              </div>
+              <div class="row">
+                <div class="first">Typescript</div>
+                <div class="second">Massive fan of typescript. While it has quirks, the typing system is incredibly flexible and expressive and allows for functional programming to create things very quickly. Most used client side on web projects, or sometime serverless nodeJS APIs. Would not use for large scale backends</div>
+              </div>
+              <div class="row">
+                <div class="first">Java</div>
+                <div class="second">Became intimiately familiar using Java at scale during my time as an engineer at Apple. Having seen massive codebases, I see large value in having something as robust as Java and being able to debug in common ways with thread and heap dumps and having easy multi-threading. However, many issues arose from the garbage collection and additional overhead of the JVM and I would be excited to see similarly sized system in action with Go or Rust</div>
+              </div>
+              <div class="row">
+                <div class="first">Rust</div>
+                <div class="second">Quickly gaining rust experience and consistently being impressed by features of the language that allow for safe, performance code. Written smart contracts and high performance multi-threaded code reading and writing to postgres in rust.</div>
+              </div>
+              <div class="row">
+                <div class="first">Go</div>
+                <div class="second">Built a web proxy from scratch in Go to handle mirroring HTTP requests to multiple upstreams, comparing results and storing in Cassandra database. Also used for a websockets project. Very handy networking libraries and similarly and a fan of the class interface and typing system</div>
+              </div>
+              <div class="row">
+                <div class="first">Python</div>
+                <div class="second">Used for scripting, data science libraries including Numpy, Pandas and used with tensorflow for any ML projects. I have also used Django for web services. Wary about python without types for production use across multiple teams</div>
+              </div>
+              <div class="row">
+                <div class="first">Clojure</div>
+                <div class="second">Used extensively during my time at Apple as a JVM compatible functional programming language. It was nice being able to leverage all Java types but be expressive in the query API which had a lot of data manipulation. Also leveraged and experimented with thread pooling and async programming with libraries like core.async and manifold</div>
+              </div>
+              <div class="row">
+                <div class="first">Julia</div>
+                <div class="second">Great for data-science and optimizations. Used during my research work writing linear optimization programs and was able to implement objective functions and conditions and use mathematical solvers (Gurobi) very easily.</div>
+              </div>
+              <div class="row">
+                <div class="first">Scala</div>
+                <div class="second">Used when writing load tests using Gatling. No real opinions or formative experiences yet</div>
+              </div>
+              <div class="row">
+                <div class="first">C/C++</div>
+                <div class="second">Used moderately for lower level embedded systems and university classwork. Familiar with memory management and parallel computing library cilk. Would prefer starting with rust for newer projects at this stage</div>
+              </div>
+            </div>
+          </div>
+        </foreignObject>
         <foreignObject class="page-outer" id="resume-outer" x="-1200" y="700" width="100%" height="200%">
           <div class="page-inner resume" xmlns="http://www.w3.org/1999/xhtml">
             <style>
@@ -675,7 +753,13 @@ const pages = [
       title: "Resume",
       x: -1200,
       y: 700,
-    }
+    },
+    {
+      id: "skills",
+      title: "Skills",
+      x: 0,
+      y: 900,
+    },
   ];
 
 let grabbingDisabled = false;
