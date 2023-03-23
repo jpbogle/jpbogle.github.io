@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
+  <title>Me</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap" rel="stylesheet">
   <link href="css/menu.css" rel="stylesheet">
   <link href="css/toggle.css" rel="stylesheet">
@@ -279,8 +280,8 @@ svg {
                 </div>
                 <div class="notes">
                   <p>First author on <a href="https://dl.acm.org/doi/10.1145/3341302.3342069">paper</a> published in ACM SIGCOMM 2019</p>
-                  <p>Modeled traffic routing in a software-defined network as a linar optimization that optimized for potential network failures similar to CVaR in portfolio optimization</p>
-                  <p>Implemented with Gurobi linear optimizer in the Julia programming language</p>
+                  <p>Modeled traffic routing in a software-defined network as a linar optimization that optimized for potential network failures similar to CVaR in financial portfolio optimization</p>
+                  <p>Implemented with Gurobi linear optimizer in the Julia programming language and experiments plotted using python and gnuplot</p>
                 </div>
               </div>
               <div class="list-item">
@@ -288,8 +289,8 @@ svg {
                   <img class="logo" style="margin-left: -8px" src="img/microsoft.png"/>
                 </div>
                 <div class="notes">
-                  <p>Worked as a contractor with Microsoft researchers in their cloud operations group</p>
-                  <p>Collaborated on TEAVAR paper and backed the analysis with real Microsoft network data</p>
+                  <p>Worked with Microsoft researchers in their cloud optimization group</p>
+                  <p>Collaborated on the TEAVAR paper listed above and backed the analysis with real Microsoft network data</p>
                 </div>
               </div>
               <div class="list-item">
@@ -306,8 +307,9 @@ svg {
                   <a href="docs/sqo.pdf">Serverless Query Optimizer</a>
                 </div>
                 <div class="notes">
-                  <p>Abstracted a database query optimizer as a lambda function</p>
+                  <p>Abstracted a database query optimizer as a lambda function written in Java</p>
                   <p>Explored parallelizing the query plan search to more efficiently cover the search space and efficiently determine an optimal query plan</p>
+                  <p>Wrote a paper discussing the trade-offs for having the query optimizer as a scaleable serverless function to reduce cycles on the database and cache sup-plans</p>
                 </div>
               </div>
               <div class="list-item">
@@ -325,7 +327,7 @@ svg {
                 </div>
                 <div class="notes">
                   <p>Undergraduate researcher on PEV self driving car project</p>
-                  <p>Built a job scheduling simulation server in python using real taxi, hubway, and subway data in Boston</p>
+                  <p>Built a job scheduling simulation server in Python using real taxi, hubway, and subway data in Boston</p>
                   <p>Integrated the simulation with open street map for <a href="https://www.media.mit.edu/projects/fleet-simulation/overview/">visualizations</a></p>
                 </div>
               </div>
@@ -363,7 +365,7 @@ svg {
                   <div> <i class="fas fa-database" style="margin-right: 10px"></i>Databases</div>
                 </div>
                 <div class="notes">
-                  <p>Experience with many databases in production queuing and streaming systems, and deep production knowledge of distributed database systems</p>
+                  <p>Experience with many databases in production queuing and streaming systems, and deep production knowledge with the following database systems, indexes and caches - Cassandra, Redis, Postgres, Solr, Elasticsearch, Memcached</p>
                   <p>Interested in distributed database consistency challenges including data replication and coordination as well as the tradeoffs between reliability vs performance and memory vs disk storage</p>
                 </div>
               </div>
@@ -373,7 +375,7 @@ svg {
                 </div>
                 <div class="notes">
                   <p>Experience with containers and kubernetes deployments, exploring service versioning and api diff generation for catching regressions</p>
-                  <p>Interested in service containerization, container orchestration, logging frameworks and CI/CD pipelines with automated testing</p>
+                  <p>Interested in service containerization, container orchestration, logging frameworks such as Grafana and Prometheus and CI/CD pipelines with automated testing</p>
                 </div>
               </div>
               <div class="list-item">
@@ -381,7 +383,7 @@ svg {
                   <div> <i class="fas fa-code" style="margin-right: 10px"></i>Web</div>
                 </div>
                 <div class="notes">
-                  <p>Experience with the latest web frameworks and interested in the future of web technologies as we continue to build high powered clients</p>
+                  <p>Experience with the latest web frameworks including React, NextJS and react state management tools and interested in the future of web technologies as we continue to build high powered clients</p>
                   <p>Interested in web assembly, webRTC, and other methods for more powerful client side applications and client side computing</p>
                 </div>
               </div>
@@ -390,7 +392,7 @@ svg {
                   <div> <i class="fas fa-dice-d6" style="margin-right: 10px"></i>Blockchain</div>
                 </div>
                 <div class="notes">
-                  <p>Expert devevloping smart contracts and been following the movements of the blockchain space closely</p>
+                  <p>Expert devevloping smart contracts on EVM and Solana and been following the movements of the blockchain space closely</p>
                   <p>Interested in how blockchain technology and various consensus algorithms can be used to sync data worldwide on a distributed ledger</p>
                   <p>Enjoy discussing trade-offs between databases, blockchains, new consensus mechanisms and other distributed ledger technologies</p>
                 </div>
@@ -459,6 +461,9 @@ svg {
           <div class="page-inner skills" style="margin-top:10px" xmlns="http://www.w3.org/1999/xhtml">
             <style>
               .header {
+                display: flex;
+                justify-content: space-between;
+                justify-items: center;
                 margin-bottom: 10px;
               }
               .description {
@@ -487,7 +492,9 @@ svg {
                 width: 75%;
               }
             </style>
-            <div class="header">Programming Languages</div>
+            <div class="header">
+              <div>Programming Languages</div>
+            </div>
             <div class="description">I've interacted with a variety of systems and programming languages and am aware of many trade-offs that exists. Here are some thougts and tidbits about when I've worked with each of these languages.</div>
             <div class="table">
               <div class="row row-header">
@@ -504,7 +511,7 @@ svg {
               </div>
               <div class="row">
                 <div class="first">Rust</div>
-                <div class="second">Quickly gaining rust experience and consistently being impressed by features of the language that allow for safe, performance code. Written smart contracts and high performance multi-threaded code reading and writing to postgres in rust.</div>
+                <div class="second">Quickly gaining rust experience and consistently being impressed by features of the language that allow for safe, performant code. Written smart contracts and high performance multi-threaded code reading and writing to postgres in rust.</div>
               </div>
               <div class="row">
                 <div class="first">Go</div>
